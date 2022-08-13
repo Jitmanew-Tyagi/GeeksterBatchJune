@@ -2,10 +2,29 @@
 public class Bits
 {
 	public static void main(String[] args) {
-        int n = -13;
-	    System.out.println(decimalToBinary(n));        
-	    System.out.println(Integer.toBinaryString(n));        
+        int n = 14;
+	    // System.out.println(decimalToBinary(n));        
+	    System.out.println(Integer.toBinaryString(n));
+	    // System.out.println(isBitOn(n, 0));
+	    // System.out.println(isBitOn(n, 2));
+	    // System.out.println(setTheBit(n, 0));
+	    // System.out.println(Integer.toBinaryString(setTheBit(n, 0)));
+	    System.out.println(unsetTheBit(n, 2));
+	    System.out.println(Integer.toBinaryString(unsetTheBit(n, 2)));
+
 	}
+
+    public static boolean isBitOn(int num, int bp) { //bit position
+        return (num & (1 << bp)) == 0 ? false : true;
+    }
+
+    public static int setTheBit(int n, int bp) {
+        return n | (1 << bp);
+    }
+
+    public static int unsetTheBit(int n, int bp) {
+        return n & (~(1 << bp));
+    }
 
     public static String decimalToBinaryForPositives(int n) {
         StringBuilder sb = new StringBuilder();
@@ -52,6 +71,8 @@ public class Bits
         if(carry > 0) sb.append(carry);
         return sb.toString();
     }
+
+
 
 
     
