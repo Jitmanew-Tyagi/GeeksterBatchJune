@@ -1,4 +1,9 @@
 abstract class Flipkart {
+
+    public Flipkart (int x) {
+
+    }
+
     void shipping() {
         System.out.println("Shipped");
     }
@@ -8,6 +13,17 @@ abstract class Flipkart {
 }
 
 class Seller extends Flipkart {
+    public Seller(int x) {
+        super(x);
+    }
+
+    @Override
+    public void shipping() {
+        super.shipping();
+        // System.out.println("Shipped child");
+
+    }
+
     public void pricing() {
         System.out.println("pricing"); 
     }
@@ -19,7 +35,7 @@ class Seller extends Flipkart {
 
 public class FlipkartDemo {
     public static void main(String[] args) {
-        Seller manavJi = new Seller();
+        Seller manavJi = new Seller(5);
         manavJi.pricing();
         manavJi.shipping();
     }

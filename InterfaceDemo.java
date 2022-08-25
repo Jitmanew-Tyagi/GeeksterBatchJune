@@ -4,7 +4,7 @@ interface ICamera {
 }
 
 interface IBrowser {
-    void loadWebpage();
+    abstract void loadWebpage();
     void download();
 }
 
@@ -25,16 +25,16 @@ class Smartphone implements ICamera, IBrowser{
     public void loadWebpage() {
         System.out.println("loadWebpage");
     }
-    // public void download() {
-    //     System.out.println("download");
-    // }
+    public void download() {
+        System.out.println("download");
+    }
 }
 
 public class InterfaceDemo {
     public static void main(String[] args) {
         Smartphone iphone = new Smartphone();
         iphone.func();
-        Smartphone.download();
-        Smartphone.record();
+        iphone.download();
+        iphone.record();
     }
 }
