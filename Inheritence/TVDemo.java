@@ -19,8 +19,6 @@ class STV extends TV {
     int x = 20;
     @Override
     public void ON() {
-
-        System.out.println(super.super.x);
         System.out.println("Switching on: 1 sec");
     }
 

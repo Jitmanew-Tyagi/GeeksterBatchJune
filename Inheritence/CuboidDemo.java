@@ -19,7 +19,7 @@ class Rectangle {
 class Cuboid extends Rectangle {
    int height;
     int x = 10;
-   public Cuboid () {
+   public Cuboid () { // Non paramet... constructor
 
    }
 
@@ -37,7 +37,7 @@ class Cuboid extends Rectangle {
 
 public class CuboidDemo {
     public static void main(String[] args) {
-        Cuboid cuboid = new Cuboid(5, 4, 6);
-        System.out.println(cuboid.area());
+        Cuboid x = new Cuboid(5, 4, 6);
+        System.out.println(x.area());
     }
 }

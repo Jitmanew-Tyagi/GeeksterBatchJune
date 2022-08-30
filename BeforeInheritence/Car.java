@@ -1,5 +1,5 @@
 public class Car {
-    public int average;
+    protected int average;
     public String colour;
     public int power;
     public int torque;

@@ -1,6 +1,6 @@
 class Parent {
-     Parent (int x) {
-     public   System.out.println("Parent constructer" + x);
+     public Parent (int x) {
+        System.out.println("Parent constructer " + x);
     }
 
     public Parent () {
@@ -15,13 +15,13 @@ class Child extends Parent {
     } 
 
     public Child (int x) {
-        super(5);
+        // super(5);
         System.out.println("Child constructer " + x);
     }
 }
 
 public class InheritenceDemo {
     public static void main(String[] args) {
-        Child child = new Child();
+        Child child = new Child(5);
     }
 }
