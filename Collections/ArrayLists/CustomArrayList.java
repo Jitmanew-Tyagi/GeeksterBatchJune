@@ -61,9 +61,8 @@ public class CustomArrayList {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         for(int i = 0; i < nel; i ++) sb.append(i + ", ");
-        sb.delete(sb.length() - 2, sb.length());
+        if(sb.length() > 1) sb.delete(sb.length() - 2, sb.length());
         sb.append("]");
         return sb.toString();
     }
-
 }
