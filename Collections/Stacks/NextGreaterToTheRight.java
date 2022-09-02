@@ -23,6 +23,19 @@ public class NextGreaterToTheRight {
         return ans;
     }
 
+    public static int[] ngrBeautified(int[] arr) {
+        int n = arr.length;
+        int[] ans = new int[n];
+        Stack<Integer> st = new Stack<>();
+        for(int i = n - 1; i >= 0; i --) {
+            int ele = arr[i];
+            while(!st.isEmpty() && st.peek() <=  ele) st.pop();
+            ans[i] = st.isEmpty() ? -1  : st.peek();
+            st.push(ele);
+        }
+        return ans;
+    }
+
     public static void display(int[] arr) {
         for(int i : arr) System.out.print(i + " ");
         System.out.println();
