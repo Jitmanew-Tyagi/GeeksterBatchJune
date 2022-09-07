@@ -94,7 +94,7 @@ public class Hashmap {
     public void put(Integer key, Integer value) {
         boolean isKey = containsKey(key);
         if(isKey) {
-            linkedlist group = group(key);
+            linkedlist group = group(key); //updation
             group.head.value = value;
         } else{
             linkedlist group = group(key);
@@ -141,7 +141,7 @@ public class Hashmap {
         return containsKey(key) ? get(key) : def;
     }
 
-    public int get(Integer key) {
+    public Integer get(Integer key) {
         boolean isKey = containsKey(key);
         linkedlist group = group(key);
         return isKey ? group.head.value : null;
@@ -152,7 +152,7 @@ public class Hashmap {
         int size = group.size();
         while(size --> 0) {
             if(group.getFirst().key == key) return true;
-            group.addLast(group.removeFirst());
+            group.addLast(group.removeFirst()); //DOUBT
         }
         return false;
     }
