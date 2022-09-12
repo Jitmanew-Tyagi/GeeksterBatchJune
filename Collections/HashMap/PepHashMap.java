@@ -55,7 +55,7 @@ public class Hashmap {
     }
 
     Hashmap() {
-        assignValues(10);
+        assignValues(16);
     }
 
     public void display() {
