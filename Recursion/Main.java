@@ -7,8 +7,9 @@ public class Main {
         // System.out.println(pow(2, 5));
         // printArray(new int[] {1, 4, 2, 1, 3, 4, 5, 56, 6, 7}, 9);
         // System.out.println(max(new int[] {1, 4, 2, 1, 3, 4, 5, 56, 6, 7}, 9));
-        System.out.println(gss("pqrs"));
-        System.out.println(fiboElongated(8));
+        System.out.println(firstIndex(new int[] {2, 3, 4, 1, 1, 2, 3, 1, 1, 1, 4, 5}, 0, 1));
+        // System.out.println(gss("pqrs"));
+        // System.out.println(fiboElongated(8));
         System.out.println("Command returned");
     }
 
@@ -94,6 +95,12 @@ public class Main {
         int faith2 = fiboElongated(n - 2);
         int exp = faith1 + faith2;
         return exp;
+    }
+
+    public static int firstIndex(int[] arr, int idx, int x){
+        if(idx == arr.length) return -1;
+        if(arr[idx] == x) return idx;
+        return firstIndex(arr, idx + 1, x);
     }
 
     public static ArrayList<String> gss(String str) {
