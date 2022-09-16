@@ -7,7 +7,8 @@ public class Main {
         // System.out.println(pow(2, 5));
         // printArray(new int[] {1, 4, 2, 1, 3, 4, 5, 56, 6, 7}, 9);
         // System.out.println(max(new int[] {1, 4, 2, 1, 3, 4, 5, 56, 6, 7}, 9));
-        System.out.println(firstIndex(new int[] {2, 3, 4, 1, 1, 2, 3, 1, 1, 1, 4, 5}, 0, 1));
+        // System.out.println(firstIndex(new int[] {2, 3, 4, 1, 1, 2, 3, 1, 1, 1, 4, 5}, 0, 1));
+        System.out.println(firstIndexReversed(new int[] {2, 3, 4, 1, 1, 2, 3, 1, 1, 1, 4, 5}, 11, 1));
         // System.out.println(gss("pqrs"));
         // System.out.println(fiboElongated(8));
         System.out.println("Command returned");
@@ -103,6 +104,17 @@ public class Main {
         return firstIndex(arr, idx + 1, x);
     }
 
+    public static int firstIndexReversed(int[] arr, int idx, int x) {
+        if(idx == -1) return -1;
+        int faith = firstIndexReversed(arr, idx - 1, x);
+        if(faith == -1) {
+            if(arr[idx] == x) return idx;
+            else return -1; 
+        } else {
+            return faith;
+        }
+    }
+
     public static ArrayList<String> gss(String str) {
         
         if(str.length() == 0) {
@@ -117,7 +129,4 @@ public class Main {
         for(String fvs : faith) ans.add(str.charAt(0) + fvs);
         return ans;
     }
-
-
 }
-
