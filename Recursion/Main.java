@@ -2,7 +2,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Main started");
-        System.out.println(gsp(5));
+        // System.out.println(gsp(5));
+        ArrayList<String> ans = new ArrayList<>();
+        gssOnWayUp(5, ans, "");
+        System.out.println(ans);
         System.out.println("Command returned");
     }
 
@@ -140,5 +143,16 @@ public class Main {
         for(String str : f3) ans.add(str + '3');
 
         return ans;
+    }
+
+    public static void gssOnWayUp(int n, ArrayList<String> ans, String pathSoFar) {
+        if(n < 0) return;
+        if(n == 0) {
+            ans.add(pathSoFar);
+            return;
+        }
+        gssOnWayUp(n - 1, ans, pathSoFar + "1");
+        gssOnWayUp(n - 2, ans, pathSoFar + "2");
+        gssOnWayUp(n - 3, ans, pathSoFar + "3");
     }
 }
