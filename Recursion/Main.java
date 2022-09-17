@@ -2,15 +2,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Main started");
-        // printInc(5);
-        // func(2, 5, 1);
-        // System.out.println(pow(2, 5));
-        // printArray(new int[] {1, 4, 2, 1, 3, 4, 5, 56, 6, 7}, 9);
-        // System.out.println(max(new int[] {1, 4, 2, 1, 3, 4, 5, 56, 6, 7}, 9));
-        // System.out.println(firstIndex(new int[] {2, 3, 4, 1, 1, 2, 3, 1, 1, 1, 4, 5}, 0, 1));
-        System.out.println(firstIndexReversed(new int[] {2, 3, 4, 1, 1, 2, 3, 1, 1, 1, 4, 5}, 11, 1));
-        // System.out.println(gss("pqrs"));
-        // System.out.println(fiboElongated(8));
+        System.out.println(gsp(5));
         System.out.println("Command returned");
     }
 
@@ -127,6 +119,26 @@ public class Main {
         ArrayList<String> ans = new ArrayList<>();
         for(String fvs : faith) ans.add(fvs);
         for(String fvs : faith) ans.add(str.charAt(0) + fvs);
+        return ans;
+    }
+
+    public static ArrayList<String> gsp(int n) {
+
+        if(n <= 0) {
+            ArrayList<String> base = new ArrayList<>();
+            if(n == 0) base.add("");
+            return base;
+        }
+
+        ArrayList<String> f1 = gsp(n - 1);
+        ArrayList<String> f2 = gsp(n - 2);
+        ArrayList<String> f3 = gsp(n - 3);
+
+        ArrayList<String> ans = new ArrayList<>();
+        for(String str : f1) ans.add(str + '1');
+        for(String str : f2) ans.add(str + '2');
+        for(String str : f3) ans.add(str + '3');
+
         return ans;
     }
 }
