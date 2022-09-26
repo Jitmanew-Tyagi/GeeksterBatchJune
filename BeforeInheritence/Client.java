@@ -1,6 +1,6 @@
 public class Client {
     public static void main(String[] args) {
-        BankCustomer cust = new BankCustomer();
+        BankCustomer cust = new BankCustomer("Asgar", 123765432, "KBSCI56");
         // p1.name = "Vishal";
         // System.out.println(cust.getName());
         // cust.setName("Himanshu Sir OP");

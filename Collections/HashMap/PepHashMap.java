@@ -1,5 +1,5 @@
 import java.util.*;
-public class Hashmap {
+public class PepHashMap {
 
     private class Node {
         Integer key = 0;
@@ -54,7 +54,7 @@ public class Hashmap {
         for(int i = 0; i < size; i ++) containers[i] = new linkedlist();
     }
 
-    Hashmap() {
+    PepHashMap() {
         assignValues(16);
     }
 

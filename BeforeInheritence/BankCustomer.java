@@ -6,10 +6,15 @@ public class BankCustomer {
     private String pan;
     private double balance = 500;
     private String branch;
-   
+
     public BankCustomer(String name, long aadhar) {
         this.name = name;
         this.aadhar = aadhar;
+    }
+
+    public BankCustomer(String name, long aadhar, String pan) {
+        this(name, aadhar);
+        this.pan = pan;
     }
 
     public String getName() {
