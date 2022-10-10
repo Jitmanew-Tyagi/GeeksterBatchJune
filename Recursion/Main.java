@@ -155,4 +155,20 @@ public class Main {
         gssOnWayUp(n - 2, ans, pathSoFar + "2");
         gssOnWayUp(n - 3, ans, pathSoFar + "3");
     }
+
+     public static void floodFill(int[][] arr, int sr, int sc, String asf) {
+        if(sr < 0 || sc < 0 || sr == arr.length || 
+            sc == arr[0].length || arr[sr][sc] == 1)  
+            return;
+        if(sr == arr.length - 1 && sc == arr[0].length - 1) {
+            System.out.println(asf);
+            return;
+        }
+        arr[sr][sc] = 1;
+        floodFill(arr, sr - 1, sc, asf + 't');
+        floodFill(arr, sr, sc - 1, asf + 'l');
+        floodFill(arr, sr + 1, sc, asf + 'd');
+        floodFill(arr, sr, sc + 1, asf + 'r');
+        arr[sr][sc] = 0;
+    }
 }
