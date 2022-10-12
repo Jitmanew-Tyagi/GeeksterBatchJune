@@ -9,6 +9,7 @@ public class Player {
     public char getSymbol() {
         return this.symbol;
     }
+    
     public void setName(String name) {
         this.name = name;
     }
