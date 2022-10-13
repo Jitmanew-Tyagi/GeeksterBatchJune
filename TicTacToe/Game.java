@@ -42,6 +42,7 @@ public class Game {
             int row = idx / board.size;
             int col = idx % board.size;
             board.board[row][col] = players[turn].getSymbol();
+            if(this.noOfMoves = board.size * board.size) return;
             if(noOfMoves >= 2 * board.size - 1 && checkIfEnded() == true) {
                 gameOver = true;
                 System.out.println(players[turn].getName() + " has won !!!");
